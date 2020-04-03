@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 
 import authConfig from '../../config/auth';
 import User from '../models/User';
-import File from '../models/File'
+import File from '../models/File';
 
 class SessionController {
   async store(req, res) {
@@ -25,10 +25,10 @@ class SessionController {
       include: [
         {
           model: File,
-          as: "avatar",
-          attributes: ["id", 'path', 'url']
-        }
-      ]
+          as: 'avatar',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
     });
 
     if (!user) {
